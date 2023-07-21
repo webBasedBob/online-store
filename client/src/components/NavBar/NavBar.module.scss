@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  width: 100%;
+  background-color: var(--primary-color);
+  height: 6rem;
+  padding: 1rem 4rem 1rem 4rem;
+  gap: 2rem;
+}
+.logo {
+  height: 4rem;
+  width: 4rem;
+  flex-shrink: 0;
+}
+.logoImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

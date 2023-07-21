@@ -1,0 +1,12 @@
+.input {
+  width: 100%;
+  border-radius: 2rem;
+  border: 2px solid var(--theme-primary);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    border: 2px solid var(--theme-primary);
+    outline: none;
+  }
+}
