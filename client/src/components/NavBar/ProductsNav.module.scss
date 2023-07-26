@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 1rem;
+  position: relative;
+}
+.dropdown {
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  width: 14rem;
+  padding: 1rem;
+  animation: slideUp 1s;
+  transform: translateY(-2rem);
+  animation: slideUp 1s;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px #999999a4;
+  font-size: 1.5rem;
+  padding: 2rem;
+  width: 20rem;
+  color: #222;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 1rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
+  & svg {
+    width: 2.2rem;
+  }
+}

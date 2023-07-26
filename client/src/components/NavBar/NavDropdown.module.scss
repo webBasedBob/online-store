@@ -4,12 +4,22 @@
   align-items: center;
   flex-shrink: 0;
   gap: 1rem;
+  text-decoration: none;
+  color: #222;
 }
 .imageContainer {
-  background-color: #999;
   border-radius: 50%;
   height: 4rem;
   width: 4rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & svg {
+    height: 70%;
+    width: 70%;
+    stroke: var(--theme-primary);
+  }
 }
 .image {
   height: 100%;
@@ -17,4 +27,34 @@
   object-fit: cover;
 }
 .title {
+  font-size: 1.5rem;
+}
+.arrow {
+  height: 50%;
+  & svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 6rem;
+  background-color: #fff;
+  animation: slideUp 1s;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px #999999a4;
+  font-size: 1.5rem;
+  padding: 2rem;
+  width: 20rem;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
 }

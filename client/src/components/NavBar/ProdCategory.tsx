@@ -1,33 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./NavDropdown.module.scss";
-import Image from "next/image";
-import { ChevronDown } from "../../assets/icons";
-import Link from "next/link";
-
-interface DropDownConfig {
-  image?: any;
-  title: string;
-  elements: string[];
-  description: string;
-  svg?: any;
-  href: string;
-}
-
-const NavDropdown = ({
-  image,
-  svg,
-  title,
-  elements,
-  description,
-  href,
-}: DropDownConfig) => {
+import styles from "./ProdCategory.module.scss";
+const elements: string[] = ["iPhone"];
+const ProdCategory = () => {
   const [mouseIsOverHeader, setMouseIsOverHeader] = useState(false);
   const [mouseIsOverBody, setMouseIsOverBody] = useState(false);
   return (
-    <Link
-      href={href}
-      className={styles.wrapper}
+    <div
       onMouseEnter={() => {
         setMouseIsOverHeader(true);
       }}
@@ -37,15 +16,7 @@ const NavDropdown = ({
         }, 500);
       }}
     >
-      <div className={styles.imageContainer}>
-        {image ? (
-          <Image className={styles.image} src={image} alt={description} />
-        ) : (
-          svg
-        )}
-      </div>
-      <p className={styles.title}>{title}</p>
-      <div className={styles.arrow}>{ChevronDown}</div>
+      <p className={styles.title}>Smartphones</p>
       {(mouseIsOverHeader || mouseIsOverBody) && elements.length > 0 && (
         <div
           className={styles.dropdown}
@@ -63,8 +34,8 @@ const NavDropdown = ({
           })}
         </div>
       )}
-    </Link>
+    </div>
   );
 };
 
-export default NavDropdown;
+export default ProdCategory;
