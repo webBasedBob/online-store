@@ -1,12 +1,23 @@
 .input {
   width: 100%;
-  border-radius: 2rem;
-  border: 2px solid var(--theme-primary);
-
-  &:hover,
-  &:active,
-  &:focus-visible {
-    border: 2px solid var(--theme-primary);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
     outline: none;
   }
+  &:active,
+  &:focus-visible {
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 5px 15px;
+    outline: none;
+  }
+}
+
+.label {
+  text-transform: capitalize;
+  font-size: 1.4rem;
 }

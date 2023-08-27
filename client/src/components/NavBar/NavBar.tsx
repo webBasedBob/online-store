@@ -15,7 +15,7 @@ const NavBar = () => {
         <Link href="/" className={styles.logo}>
           <Image className={styles.logoImg} src={logo} alt="logo" />
         </Link>
-        <TextInput />
+        <TextInput customClass={styles.input} />
         <NavDropdown
           href="/account"
           image={avatar}

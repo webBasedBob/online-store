@@ -1,0 +1,17 @@
+.overlayInner {
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  height: 200%;
+  width: 200%;
+  background-color: #3333335e;
+  backdrop-filter: blur(4px);
+}
+.overlayOuter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+.toggler {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  & * {
+    background-color: #fff;
+    padding: 0;
+    border: none;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+  & button {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
