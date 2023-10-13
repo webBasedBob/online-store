@@ -1,12 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AuthModal.module.scss";
 import Card from "../UI/Card";
 import TextInput from "../UI/TextInput";
 import Modal from "../UI/Modal";
 import Button from "../UI/Button";
-
+import {
+  getLoginState,
+  loginWithCredentials,
+  signupWithCredentials,
+} from "@/redux/slices/auth";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 export const AuthModal = () => {
+  const dispatch = useAppDispatch();
   const [isLogin, setIsLogin] = useState(true);
   const [loginCredentials, setLoginCredentials] = useState({
     email: "",
@@ -17,27 +23,14 @@ export const AuthModal = () => {
     password: "",
     username: "",
   });
-  const signUp = async () => {
-    const response = await fetch(`http://localhost:8000/auth/create-account`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(signupCredentials),
-    });
-    const res2 = await response.json();
-    console.log(res2);
+  const signUp = () => {
+    dispatch(signupWithCredentials(signupCredentials));
   };
-  const login = async () => {
-    const response = await fetch(`http://localhost:8000/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(loginCredentials),
-    });
-    const res2 = await response.json();
-    console.log(res2);
+  const loginGoogle = () => {
+    window.location.href = "http://localhost:8000/auth/google";
+  };
+  const login = () => {
+    dispatch(loginWithCredentials(loginCredentials));
   };
   const modalContent = isLogin ? (
     <>
@@ -146,6 +139,14 @@ export const AuthModal = () => {
       <div className={styles.wrapper}>
         {modalContent}
         {togglerContent}
+        <div className={styles.socialLogin}>
+          <p>Or use socials:</p>
+          <div className={styles.socialsIconsWrapper}>
+            <p onClick={loginGoogle} className={styles.googleIcon}>
+              google placeholder
+            </p>
+          </div>
+        </div>
       </div>
     </Modal>
   );
