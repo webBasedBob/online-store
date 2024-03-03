@@ -1,0 +1,61 @@
+.container {
+  background-color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.filterTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  & span {
+    height: 100%;
+    width: 20px;
+    & svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+.chevron {
+  transform: rotate(180deg);
+}
+
+.filterBody {
+  padding: 0 15px;
+}
+.filterBody {
+  overflow: hidden;
+  // transition: height 10s ease;
+}
+
+// .collapsed {
+//   height: 0 !important; // Override any inline styles when collapsed
+// }
+.optionContainer {
+  display: flex;
+  gap: 5px;
+  color: #222222;
+  margin: 8px 0;
+  align-items: center;
+  font-size: 13px;
+}
+.checkbox {
+  color: #0082e6;
+  cursor: pointer;
+}
+.optionName {
+  cursor: pointer;
+  color: #222222;
+}
+.quantity {
+  cursor: pointer;
+  color: #222222b7;
+  margin-left: 5px;
+}

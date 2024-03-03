@@ -1,0 +1,72 @@
+.container {
+  grid-row: 1/1;
+  grid-column: 2/-1;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  padding: 16px 26px;
+  font-size: 14px;
+  text-transform: capitalize;
+  align-items: center;
+}
+
+.sort {
+  position: relative;
+  display: flex;
+}
+.orderOptions {
+  display: flex;
+  flex-direction: column;
+  border: 1px #999999af solid;
+  border-radius: 5px;
+  position: absolute;
+  left: 70px;
+  top: -5px;
+  background-color: #fff;
+}
+.selectedOrderBy {
+  display: flex;
+  width: 120px;
+  padding: 5px 10px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.chevron {
+  height: 100%;
+  width: 18px;
+}
+.allOrderByOptions {
+  overflow: hidden;
+}
+.orderByOption {
+  cursor: pointer;
+  width: 120px;
+  padding: 5px 10px;
+}
+.displayBtnActive {
+  background-color: #99999944;
+}
+.display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.displayButtons {
+  border-radius: 5px;
+  border: 1px #999999af solid;
+  display: flex;
+  & div:nth-child(2) {
+    border-left: 1px #999999b7 solid;
+  }
+  & div {
+    width: 30px;
+    padding: 5px;
+    cursor: pointer;
+    & svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
