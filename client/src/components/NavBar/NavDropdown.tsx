@@ -12,6 +12,7 @@ interface DropDownConfig {
   description: string;
   svg?: any;
   href: string;
+  hasChevron: boolean;
 }
 
 const NavDropdown = ({
@@ -21,6 +22,7 @@ const NavDropdown = ({
   elements,
   description,
   href,
+  hasChevron,
 }: DropDownConfig) => {
   const [mouseIsOverHeader, setMouseIsOverHeader] = useState(false);
   const [mouseIsOverBody, setMouseIsOverBody] = useState(false);
@@ -45,24 +47,26 @@ const NavDropdown = ({
         )}
       </div>
       <p className={styles.title}>{title}</p>
-      <div className={styles.arrow}>{ChevronDown}</div>
-      {(mouseIsOverHeader || mouseIsOverBody) && elements.length > 0 && (
-        <div
-          className={styles.dropdown}
-          onMouseEnter={() => {
-            setMouseIsOverBody(true);
-          }}
-          onMouseLeave={() => {
-            setTimeout(() => {
-              setMouseIsOverBody(false);
-            }, 500);
-          }}
-        >
-          {elements.map((el: string) => {
-            return <div>{el}</div>;
-          })}
-        </div>
-      )}
+      {hasChevron && <div className={styles.arrow}>{ChevronDown}</div>}
+      {hasChevron &&
+        (mouseIsOverHeader || mouseIsOverBody) &&
+        elements.length > 0 && (
+          <div
+            className={styles.dropdown}
+            onMouseEnter={() => {
+              setMouseIsOverBody(true);
+            }}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setMouseIsOverBody(false);
+              }, 500);
+            }}
+          >
+            {elements.map((el: string) => {
+              return <div>{el}</div>;
+            })}
+          </div>
+        )}
     </Link>
   );
 };

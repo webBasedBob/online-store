@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 type AuthState = {
-  isLoggedIn: boolean;
+  isLoggedIn: boolean | null;
   username: string | null;
   email: string | null;
   role: string | null;
 };
 
 const initialState = {
-  isLoggedIn: false,
+  isLoggedIn: null,
   username: null,
   email: null,
   role: null,
@@ -82,6 +82,10 @@ export const getLoginState = createAsyncThunk(
         thunkAPI.dispatch(auth.actions.reset());
       }
       const user = await response.json();
+      if (user.message === "Unauthenticated") {
+        thunkAPI.dispatch(auth.actions.reset());
+        return;
+      }
       console.log("ceplm", user);
       thunkAPI.dispatch(auth.actions.setUser(user));
       return user;

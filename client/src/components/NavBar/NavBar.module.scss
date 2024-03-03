@@ -17,12 +17,80 @@
   object-fit: cover;
 }
 .input {
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  &:hover {
+    // box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    outline: none;
+  }
+  &:active,
+  &:focus-visible {
+    // box-shadow: rgba(0, 0, 0, 0.18) 0px 5px 15px;
+    outline: none;
+  }
   border-radius: 2rem;
-  border: 2px solid var(--theme-primary);
+  // border: 2px solid var(--theme-primary);
+  border-radius: 16px !important;
+
   &:hover,
   &:active,
   &:focus-visible {
-    border: 2px solid var(--theme-primary);
     outline: none;
   }
+}
+.searchBar {
+  position: relative;
+}
+.searchContainer {
+  border-radius: 16px;
+  overflow: hidden;
+  width: 50%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  outline: 2px solid var(--theme-primary);
+  background-color: #fff;
+  z-index: 1000;
+}
+.popularSearchText {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 10px 10px 15px;
+}
+.searchSuggestion {
+  font-size: 13px;
+  margin: 0px;
+  padding: 0px;
+  padding: 0px 10px 10px 15px;
+  cursor: pointer;
+  width: fit-content;
+}
+.expandedSearch {
+  // padding: 10px;
+}
+.searchIcon {
+  width: 25px;
+  position: absolute;
+  height: 100%;
+  right: 15px;
+  top: 0px;
+  &.close {
+    right: 45px;
+  }
+  cursor: pointer;
+  & svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+.searchBtn {
+  background-color: #fff;
+  padding: 0px;
+  margin: 0px;
+  border: none;
 }
