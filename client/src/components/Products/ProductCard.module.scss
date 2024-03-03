@@ -1,0 +1,23 @@
+.productCard {
+  height: 500px;
+  background-color: #fff;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 6px;
+}
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+}
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 40px;
+}

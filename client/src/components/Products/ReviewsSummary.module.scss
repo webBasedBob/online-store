@@ -1,0 +1,33 @@
+.ratingValue {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  &Img {
+    position: relative;
+    height: 2.4rem;
+    & img {
+      height: 2.4rem;
+      position: relative;
+      z-index: 30;
+    }
+  }
+  &Background {
+    background-color: #f9bf3b;
+    height: 80%;
+    width: 98%;
+    position: absolute;
+    top: 10%;
+    left: 1px;
+    z-index: 20;
+  }
+}
+.ratingCount {
+  color: #222222a6;
+}

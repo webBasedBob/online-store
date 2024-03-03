@@ -1,0 +1,22 @@
+.pageContent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: auto;
+  max-width: 1600px;
+  row-gap: 10px;
+  column-gap: 10px;
+  margin: 20px;
+  margin-top: 30px;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: 2/-1;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.filters {
+  grid-column: 1/1;
+  grid-row: 1/3;
+}
